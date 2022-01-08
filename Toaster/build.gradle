@@ -5,6 +5,17 @@ plugins {
 }
 
 android {
+
+    afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    from components.release
+                }
+            }
+        }
+    }
+
     compileSdk 31
 
     defaultConfig {
